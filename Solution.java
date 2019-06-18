@@ -16,6 +16,7 @@ public class Solution {
         int expectedSize = searchAnagramsFor.length();
         return Arrays
                 .stream(dictionary)
+                .parallel()
                 .filter(el -> el.length() == expectedSize)
                 .filter(el -> isAnagram(el,sample))
                 .collect(Collectors.toList());
